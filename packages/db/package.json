@@ -1,10 +1,10 @@
 {
-  "name": "@repo/common",
+  "name": "@repo/db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "exports":{
-    "./types":"./src/types.ts"
+    "./client":"./src/index.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "zod": "^4.4.3"
+    "@prisma/client": "^7.8.0",
+    "prisma": "^7.8.0"
   }
 }
