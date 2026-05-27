@@ -2,6 +2,7 @@ import {WebSocket, WebSocketServer} from "ws";
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import {JWT_SECRET} from '@repo/backend-common/config'
 import { prisma as prismaClient } from '@repo/db/client'
+import "dotenv/config";
 const wss=new WebSocketServer({port:8080});
     // DEMO::
     // const users=[
@@ -42,6 +43,7 @@ const wss=new WebSocketServer({port:8080});
     return decoded.userId;
     
  }catch(e){
+    console.log(e);
     return null;
  }
  }
@@ -54,6 +56,7 @@ wss.on('connection',function connection(ws,request){
     const token=queryParams.get("token") || "";
     // token ko check krenge ab
     const userId=checkUser(token)
+    console.log(userId)
     if(userId==null){
         ws.close();
         return;
