@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null)
@@ -310,12 +311,12 @@ export default function Home() {
               
               GitHub
             </a>
-            <a
-              href="#"
+            <Link
+              href={"/signup"}
               className="bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded-xl hover:bg-gray-700 transition-colors"
             >
               Start drawing
-            </a>
+            </Link>
           </div>
 
           <button
