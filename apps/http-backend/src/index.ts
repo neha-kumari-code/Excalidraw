@@ -5,8 +5,10 @@ import { middleware } from './middleware';
 import {UserSchema,SignInSchema,CreateRoomSchema} from '@repo/common/types'
 import { prisma as prismaClient } from '@repo/db/client';
 import bcrypt from 'bcrypt'
+import cors from 'cors'
 const app=express();
 app.use(express.json());
+app.use(cors())
 import "dotenv/config";
 app.post("/signup",async(req,res)=>{
     try{
